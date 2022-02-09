@@ -1,6 +1,7 @@
 package com.example.aboutme
 
 import android.content.Context
+import android.opengl.Visibility
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val buttonDone = findViewById<Button>(R.id.done_button)
         buttonDone.setOnClickListener { addNickname(it) }
+        findViewById<TextView>(R.id.nickname_text).setOnClickListener { updateNickname(it) }
+
     }
 
     private fun addNickname(view : View) {
@@ -26,5 +29,19 @@ class MainActivity : AppCompatActivity() {
         nicknameTextView.visibility = View.VISIBLE
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    private fun updateNickname(view: View){
+        val editText = findViewById<EditText>(R.id.nickname_edit)
+        val buttonDone = findViewById<Button>(R.id.done_button)
+        editText.visibility = View.VISIBLE
+        buttonDone.visibility = View.VISIBLE
+        view.visibility = View.GONE
+        editText.requestFocus()
+
+        // Show the keyboard.
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(editText, 0)
+
     }
 }
