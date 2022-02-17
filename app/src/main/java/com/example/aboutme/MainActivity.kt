@@ -6,25 +6,25 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import com.example.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
+    private val myName : MyName = MyName("Cristian Granero")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Data binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.myName = myName
         binding.doneButton.setOnClickListener { addNickname() }
         binding.nicknameText.setOnClickListener { updateNickname() }
     }
 
     private fun addNickname() {
-        binding.nicknameText.text = binding.nicknameEdit.text.toString()
+        myName?.nickname = binding.nicknameEdit.text.toString()
+        binding.invalidateAll() //Refresh the UI with the new data
         binding.nicknameEdit.visibility = View.GONE
         binding.doneButton.visibility = View.GONE
         binding.nicknameText.visibility = View.VISIBLE
