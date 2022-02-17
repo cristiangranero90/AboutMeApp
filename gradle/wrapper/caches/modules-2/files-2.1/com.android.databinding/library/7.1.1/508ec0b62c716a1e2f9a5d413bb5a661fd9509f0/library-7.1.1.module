@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.android.databinding",
+    "module": "library",
+    "version": "7.1.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.databinding",
+          "module": "viewbinding",
+          "version": {
+            "requires": "7.1.1"
+          }
+        },
+        {
+          "group": "android.arch.lifecycle",
+          "module": "runtime",
+          "version": {
+            "requires": "1.0.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "library-7.1.1.aar",
+          "url": "library-7.1.1.aar",
+          "size": 60655,
+          "sha512": "3d59f9fc9c190166ad7704c6fa3da1faaa4e6309eacaa0c65ee37ddf9963083c29b46687ae1545156c893b79beec5784fb08417cfd3636e0cd84908c639cfb03",
+          "sha256": "7b008996863cef6fe3d57782e5ca039f5a7927cd1622fc42824ff7f1df46d2ee",
+          "sha1": "14a64ba58b24d391f9ee72ff31a723ebf974a17d",
+          "md5": "64424a949b6a9280c9c56a1b9bab3969"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.support",
+          "module": "support-core-utils",
+          "version": {
+            "requires": "26.1.0"
+          }
+        },
+        {
+          "group": "com.android.databinding",
+          "module": "baseLibrary",
+          "version": {
+            "requires": "7.1.1"
+          }
+        },
+        {
+          "group": "com.android.databinding",
+          "module": "viewbinding",
+          "version": {
+            "requires": "7.1.1"
+          }
+        },
+        {
+          "group": "android.arch.lifecycle",
+          "module": "runtime",
+          "version": {
+            "requires": "1.0.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "library-7.1.1.aar",
+          "url": "library-7.1.1.aar",
+          "size": 60655,
+          "sha512": "3d59f9fc9c190166ad7704c6fa3da1faaa4e6309eacaa0c65ee37ddf9963083c29b46687ae1545156c893b79beec5784fb08417cfd3636e0cd84908c639cfb03",
+          "sha256": "7b008996863cef6fe3d57782e5ca039f5a7927cd1622fc42824ff7f1df46d2ee",
+          "sha1": "14a64ba58b24d391f9ee72ff31a723ebf974a17d",
+          "md5": "64424a949b6a9280c9c56a1b9bab3969"
+        }
+      ]
+    }
+  ]
+}
